@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<title>AI সায়েন্টিস্ট বট</title>
+<style>
+body { font-family: 'SolaimanLipi'; background: #e3f2fd; text-align: center; padding: 30px; }
+.box { background: white; max-width: 500px; margin: auto; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px gray; }
+input { width: 80%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; }
+button { padding: 10px 20px; background: #2196F3; color: white; border: none; border-radius: 8px; cursor: pointer; }
+#answer { margin-top: 20px; font-size: 18px; color: #333; }
+</style>
+</head>
+<body>
+<div class="box">
+  <h2>🧪 AI সায়েন্টিস্ট বট</h2>
+  <p>বিজ্ঞানের যেকোনো প্রশ্ন করো</p>
+  <input type="text" id="q" placeholder="যেমন: পানি কেন ফোটে?">
+  <button onclick="ask()">জিজ্ঞেস করো</button>
+  <div id="answer"></div>
+</div>
+
+<script>
+let knowledge = {
+  "পানি কেন ফোটে": "১০°C তাপে পানির অণুগুলো বাষ্প হয়ে উপরে উঠে যায়। একেই স্ফুটন বলে।",
+  "মাধ্যাকর্ষণ কি": "পৃথিবী সব জিনিসকে নিজের দিকে টানে। এই টানকেই মাধ্যাকর্ষণ বলে।",
+  "বিদ্যুৎ কিভাবে আসে": "পাওয়ার প্ল্যান্টে টারবাইন ঘুরিয়ে জেনারেটর দিয়ে ইলেকট্রন নড়াচড়া করানো হয়।",
+  "গাছ খাবার বানায় কিভাবে": "গাছ সূর্যের আলো + পানি + CO2 দিয়ে সালোকসংশশ্লেষণ করে খাবার বানায়।",
+  "পাই এর মান কত": "π = 3.1416। বৃত্তের পরিধি ÷ ব্যাস = π।"
+};
+
+function ask() {
+  let q = document.getElementById("q").value.trim();
+  let ans = knowledge[q] || "সরি, এই প্রশ্ন আমার ডেটাবেসে নাই। তুমি উত্তরটা জেনে আমাকে শিখিয়ে দাও!";
+  document.getElementById("answer").innerHTML = "<b>বট:</b> " + ans;
+}
+</script>
+</body>
+</ht
